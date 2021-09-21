@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ViewModels.ViewModel.DogFurViewModel>
+
+@{
+    ViewBag.Title = "Index3";
+}
+
+<h2>Index3</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DogAdress.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogAdress.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogAdress.Legs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogAdress.FurId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FurAdress.Color)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Timestamp)
+        </th>
+        @*<th></th>*@
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogAdress.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogAdress.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogAdress.Legs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogAdress.FurId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FurAdress.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timestamp)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+    }
+
+</table>
