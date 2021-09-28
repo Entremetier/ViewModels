@@ -47,6 +47,7 @@ namespace ViewModels
                 Id = 1,
                 Age = 12,
                 Name = "Donald",
+                Legs = 2,
                 FurId = 2
             });
 
@@ -55,6 +56,7 @@ namespace ViewModels
                 Id = Controllers.DogController.dogsList.Count + 1,
                 Age = 91,
                 Name = "Pluto",
+                Legs = 4,
                 FurId = 3
             });
 
@@ -63,6 +65,7 @@ namespace ViewModels
                 Id = Controllers.DogController.dogsList.Count + 1,
                 Age = 67,
                 Name = "Lassie",
+                Legs = 5,
                 FurId = 4
             });
         }

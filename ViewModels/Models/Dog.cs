@@ -7,10 +7,29 @@ namespace ViewModels.Models
 {
     public class Dog
     {
-        public int Id { get; set; }
-        public int Age { get; set; } = 0;
+        private int age;
+        private double legs;
+
+        public int Id { get; set; } = Controllers.DogController.dogsList.Count + 1;
+        public int Age
+        {
+            get => age;
+            set
+            {
+                if (value < 0 ) value = 0;
+                age = value;
+            }
+        }
         public string Name { get; set; } = "";
-        public double Legs { get; set; } = 4;
+        public double Legs
+        {
+            get => legs;
+            set
+            {
+                if (value < 0) value = 0;
+                legs = value;
+            }
+        }
 
         //FellId ist der Fremdschlüssel für das Fell
         public int FurId { get; set; } = -1;

@@ -68,17 +68,25 @@ namespace ViewModels.Controllers
 
         // POST: Dog/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(int age, string name, double legs, int furId)
         {
             try
             {
-                // TODO: Add insert logic here
+                Dog dog = new Dog
+                {
+                    Age = age,
+                    Name = name,
+                    Legs = legs,
+                    FurId = furId
+                };
 
-                return RedirectToAction("Index");
+                dogsList.Add(dog);
+
+                return RedirectToAction("Index2");
             }
             catch
             {
-                return View();
+                return View("error");
             }
         }
 
@@ -107,7 +115,8 @@ namespace ViewModels.Controllers
         // GET: Dog/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            dogsList[id - 1].IsActive = false;
+            return RedirectToAction("index2");
         }
 
         // POST: Dog/Delete/5
